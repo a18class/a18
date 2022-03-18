@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >A18 Member</title>
+  <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.css">
+  <link rel="stylesheet" href="./member.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="antialiased bg-gradient-to-r from-orange-300 to-orange-400 "> <!--via-orange-300-->
+<header>
+   <nav class="flex items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-amber-50 drop-shadow-lg">
+     <div>
+        <a href="../index.html">
+          <img  class="ml-14 my-3" src="..\images\a18-cool-removebg.png" width="30%" alt="A18">
+        </a>
+      </div>
+     
+       <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+     
+     <div class="hidden w-full md:flex md:items-center md:w-full ml-96" id="menu">
+        <ul
+          class="pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0">
+          <li>
+            <a class="md:p-2 my-2 block font-bold hover:text-orange-400" href="#">Giới thiệu<i class="p-1 fas fa-bookmark"></i></a>
+          </li>
+          <li>
+            <a class="md:p-2 my-2 block font-bold hover:text-orange-400" href="member.html">Thành viên<i class="p-1 fas fa-user"></i></a>
+          </li>
+          <li>
+            <a class="md:p-2 my-2 block font-bold hover:text-orange-400" href="#">Thư viện ảnh<i class="p-1 fas fa-image"></i></a>
+          </li>
+          <li>
+            <a class="md:p-2 my-2 block font-bold hover:text-orange-400" href="../Achivements/achivement.html">Thành tựu<i class="p-1 fas fa-trophy"></i></a>
+          </li>
+          <li>
+            <button class="my-2 bg-blue-500 text-black hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded-full" href="#">
+              Liên hệ<i class="p-1 fas fa-phone-alt"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+<div class="grid grid-cols-[100px_577px_170px_577px_100px] grid-rows auto-rows-max pt-16">  <!-- Table All -->
+             <!-- Teacher Trang - English  -->
+              <div class="grid grid-cols-[330px] grid-rows auto-rows-max col-start-4 col-end-5 row-start-2 row-end-3 flex items-center justify-center">  <!-- Table Small -->
+
+                <div class="col-span-2 bg-white w-fit rounded-3xl drop-shadow-lg p-5 cursor-pointer" id="trang_teacher">
+                  <div class="flex flex-row grow" >
+                    <img src="./Teacher/TrangQuynhNguyen.jpg" class="rounded-full w-[90px] h-[90px] drop-shadow-lg object-cover" alt="NTQT">
+                    <div class="flex flex-col pl-5" >
+                        <p class="pt-[10px] relative flex justify-center items-center font-bold text-lg whitespace-nowrap">
+                            Nguyễn Thị Quỳnh Trang (TrangNTQ24)
+                        </p>
+                        <p class="mt-[2px] relative flex justify-center items-center font-bold text-base">
+                            Giáo viên Tiếng Anh - GVCN
+                        </p>
+                    </div>
+                      <i class="flex-none pl-10 pr-5 fas fa-chevron-down mx-auto font-bold text-lg " id="icon_trang_teacher"></i>
+                  </div>
+                </div>
+                
+                <div class="overflow-hidden transition-all max-h-0 duration-700 card" id="show_teachertrang">
+                  <div class="col-span-1 h-16 rounded-3xl drop-shadow-lg p-5 bg-white flex items justify-center my-3 ">
+                    <p class="pb-1 relative flex justify-center items-center font-bold text-xl">
+                      <i class="fas fa-birthday-cake pr-2 text-pink-400"></i>3/10/????
+                    </p>
+                  </div>
+
+                  <div class="col-span-1 text-black w-220 h-16 rounded-3xl drop-shadow-lg p-5 bg-white flex items justify-center my-3">
+                    <p class="pb-1 relative flex justify-center items-center font-bold text-xl">
+                      <i class="fas fa-heart pr-2 text-red-500"></i>Ba mẹ cần tuyển rể
+                  </div>
+
+                  <div class="col-span-2 text-black w-577 h-25 rounded-3xl drop-shadow-lg pt-2 bg-white flex items-center justify-center my-3 ">
+                    <p class="pb-1 relative flex justify-center items-end font-bold text-lg text-black-900">
+                      Cô Trang là giáo viên chủ nhiệm thứ 2 của lớp A18</br>
+                      Thích : đi du lịch, dạy lớp A18 ~ hình như ghét Huy :(</br>
+                      Ghét : mấy con không lông, trơn, nhớt, nhiều chân tay</br>
+                      
+                    </p>
+                    <a href="https://www.facebook.com/Trangggbkhn" aria-label="Read more about Seminole's new baby mayor"><i class="flex-none px-5 fab fa-facebook mx-auto font-bold text-lg cursor-pointer text-3xl"></i></a>
+                  </div>
+                </div>
+          </div>
+          <!-- END PROFILE TEACHER TRANG -->    
+
+          <!-- Phương Táo  -->
+            <div class="grid grid-cols-[330px] grid-rows auto-rows-max col-start-4 col-end-5 row-start-3 row-end-4 flex items-center justify-center mt-16">  <!-- Profile-->
+
+              <div class="col-span-2 bg-white w-fit h-30 rounded-3xl drop-shadow-lg p-5 cursor-pointer" id="apple_teacher">
+                <div class="flex flex-row grow" >
+                  <img src="./Teacher/PhuongTao.jpg" class="rounded-full w-[90px] h-[90px] drop-shadow-lg object-cover" alt="PhuongTao">
+                  <div class="flex flex-col pl-5" >
+                      <p class="pt-[10px] relative flex justify-center items-center font-bold text-lg whitespace-nowrap">
+                          Cấn Lan Phương ( Phương Táo )
+                      </p>
+                      <p class="mt-[2px] relative flex justify-center items-center font-bold text-base">
+                          Giáo viên Toán
+                      </p>
+                  </div>
+                    <i class="flex-none pl-10 pr-5 fas fa-chevron-down mx-auto font-bold text-lg " id="icon_apple_teacher"></i>
+                </div>
+              </div>
+              
+              <div class="overflow-hidden transition-all max-h-0 duration-700 card" id="show_teacherapple">
+                <div class="col-span-1 w-220 h-16 rounded-3xl drop-shadow-lg p-5 bg-white flex items justify-center my-3 ">
+                  <p class="pb-1 relative flex justify-center items-center font-bold text-xl">
+                    <i class="fas fa-birthday-cake pr-2 text-pink-400"></i>29/11/????
+                  </p>
+                </div>
+
+                <div class="col-span-1 text-black h-16 rounded-3xl drop-shadow-lg p-5 bg-white flex items justify-center my-3">
+                  <p class="pb-1 relative flex justify-center items-center font-bold text-xl">
+                    <i class="fas fa-heart pr-2 text-red-500"></i>Cần 10 anh người yêu
+                </div>
+
+                <div class="col-span-2 text-black w-577 h-25 rounded-3xl drop-shadow-lg pt-2 bg-white flex items-center justify-center my-3 ">
+                  <p class="pb-1 relative flex justify-center items-end font-bold text-lg text-black-900">
+                    ABOUT  
+                  </p>
+                  <a href="https://www.facebook.com/phuong.taos" aria-label="Read more about Seminole's new baby mayor"><i class="flex-none px-5 fab fa-facebook mx-auto font-bold text-lg cursor-pointer text-3xl"></i></a>
+                </div>
+              </div>
+            </div>
+          <!-- END PROFILE Phương Táo -->
+</div>
+            <script src="script.js"></script>
+</body>
+</html5

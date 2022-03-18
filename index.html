@@ -19,6 +19,10 @@
         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
       }
     </style>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
@@ -77,13 +81,14 @@
           </p>
           <button 
             class="mx-auto text-xl lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            @click="window.scrollTo({ top: document.documentElement.clientHeight, behavior: 'smooth' })"
           >
             Start Now
           </button>
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-6 text-center">
-          <img class="w-full md:w-4/6 z-50 mx-auto" src="./classroom/images/Big-Chicken-Dabbing-BasketBallBat.png" />
+          <img class="w-full md:w-3/5 z-50 mx-auto" src="./classroom/images/Karate Chicken.png" />
         </div>
       </div>
     </div>

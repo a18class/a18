@@ -1,0 +1,78 @@
+<!-- search bar -->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 mb-3 mt-3">
+			<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Type to search..">
+		</div>
+	</div>
+
+<div class="container flex items-center justify-center text-white min-w-screen overflow-hidden">
+    <div class="relative">
+        <div class="absolute top-4 left-3"> 
+            <i class="fa fa-search text-gray-400 z-20 hover:text-black"></i> 
+        </div> 
+        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" class="h-14 max-w-24 pl-10 bg-gray-700 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" placeholder="Search name...">
+        <div class="absolute top-2 right-2"> 
+            <button class="h-10 w-20 bg-red-400 font-bold text-black rounded-lg hover:text-white">Search</button> 
+        </div>
+    </div>
+</div>
+
+  <!-- results -->
+	<div class="container" id="resultsContainer">
+		<div class="row" id="myItems">
+			<!-- card one -->   
+			<div class="col-sm-3 mt-3" id="cardOne">
+				<div class="card">
+					<div class="card-block">
+						<img class="card-img-top img-fluid" src="//placehold.it/500x200" alt="Card image cap">
+						<h5 class="card-title">Card A</h5>
+						<h6 class- "card-personalityType">Subtitle</h6>
+						<p class="card-text">This card has supporting text below as a natural lead-in to additional content</p>
+					</div>
+				</div>
+			</div>
+			<!-- card two -->
+			<div class="col-sm-3 mt-3">
+				<div class="card">
+					<div class="card-block">
+						<img class="card-img-top img-fluid" src="//placehold.it/500x200" alt="Card image cap">
+						<h5 class="card-title">Card Two</h5>
+						<h6 class- "card-personalityType">Subtitle</h6>
+						<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					</div>
+				</div>
+			</div>
+
+            <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
+                <a href="" class="c-card block bg-gray-300 shadow-md hover:shadow-xl rounded-3xl overflow-hidden">
+                <div class="relative pb-48 overflow-hidden">
+                  <img class="absolute inset-0 h-full w-full object-cover" src="./Images/No Picture.jpg" alt="">
+                </div>
+                <div class="p-4">
+                  <h2 class="mt-2 mb-2 font-bold text-xl text-black text-center">...</h2>
+                  <p class="text-sm text-black font-bold text-center">...</p>
+                </div>
+                </a>
+              </div>
+      
+<script>
+    // search results //
+function myFunction() {
+    var input, filter, cards, cardContainer, h5, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("myItems");
+    cards = cardContainer.getElementsByClassName("card");
+    for (i = 0; i < cards.length; i++) {
+        title = cards[i].querySelector(".card-block h5.card-title");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            cards[i].parentElement.style.display = "flex"
+              } else {
+                cards[i].parentElement.style.display = "none"
+        }
+    }
+}
+
+
+</script>

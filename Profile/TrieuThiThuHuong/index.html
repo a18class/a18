@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nguyễn Thị Quỳnh Trang</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="./Images/main/logov1.png">
+  <!-- Font Awesome if you need it -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+ 
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> 
+  <!--Replace with your tailwind.css once created-->
+    <style>
+        .gradient {
+        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+      }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-gray-600">
+  <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+	<!--Main Col-->
+	<div id="profile" class="w-full lg:w-3/5 rounded-3xl lg:rounded-3xl lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+		<div class="p-4 md:p-12 text-center lg:text-left">
+			<!-- Image for mobile view-->
+			<div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('./TrieuHuong1.jpg')"></div>
+			<h1 class="text-2xl font-bold pt-8 lg:pt-0">Triệu Thị Thu Hương</h1>
+			<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+			<p class="pt-4 text-base font-bold flex items-start justify-center lg:justify-start">
+                <i class="fas fa-chalkboard-teacher mr-2 mt-1"></i> Giáo viên Văn</p>
+                <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
+                    <i class="fas fa-birthday-cake mr-4"></i>8/9</p>
+			<p class="pt-8 text-base">
+                Cô giảng bài rất dễ hiểu. Qua lời giảng ấy, em cảm nhận được cái hay, cái đẹp của mỗi bài thơ, bài văn. Mỗi tiết học lại mang đến cho em nhiều trải nghiệm thú vị.</br>
+                <a class="font-bold">Thích: </a>du lịch, nấu ăn, ngắm mưa nghe nhạc. Đặc biệt thích tư duy đổi mới.</br>
+                <a class="font-bold">Ghét: </a>người hay thất hứa, người khoác lác và ghét sự lười biếng </br>
+            </p>
+			<div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-center">
+                <!-- Facebook -->
+				<a class="link" href="https://www.facebook.com/huong.trieu.900" data-tippy-content="Facebook"><i class="fab fa-facebook-f mx-6 text-2xl fill-current text-gray-600 hover:text-blue-800"></i></a>
+                <!-- Instagram -->
+			</div>
+		
+			<!-- Use https://simpleicons.org/ to find the svg for your preferred product --> 
+
+		</div>
+        <div class="absolute top-0 left-0 h-12 w-18 p-4 ">
+            <a class="link" href="https://a18class.github.io/a18/member.html" data-tippy-content="Back"><i class="fas fa-arrow-left text-white text-2xl cursor-pointer"></i></a>
+          </div>
+	</div>
+	
+	<!--Img Col-->
+	<div class="w-full lg:w-2/5">
+		<!-- Big profile image for side bar (desktop) -->
+		<img src="./TrieuHuong1.jpg" class="rounded-none lg:rounded-3xl shadow-2xl hidden lg:block">
+		<!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
+		
+	</div>
+	
+	
+	<!-- Pin to top right corner -->
+	  <div class="absolute top-0 right-0 h-12 w-18 p-4">
+		<button class="js-change-theme focus:outline-none">🌙</button>
+	  </div>
+
+</div>
+
+	<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@4"></script>
+	<script>
+		//Init tooltips
+		tippy('.link',{
+		  placement: 'bottom'
+		})
+
+		//Toggle mode
+		const toggle = document.querySelector('.js-change-theme');
+		const body = document.querySelector('body');
+		const profile = document.getElementById('profile');
+		
+		
+		toggle.addEventListener('click', () => {
+
+		  if (body.classList.contains('text-gray-900')) {
+			toggle.innerHTML = "☀️";
+			body.classList.remove('text-gray-900');
+			body.classList.add('text-gray-100');
+			profile.classList.remove('bg-white');
+			profile.classList.add('bg-gray-900');
+		  } else
+		  {
+			toggle.innerHTML = "🌙";
+			body.classList.remove('text-gray-100');
+			body.classList.add('text-gray-900');
+			profile.classList.remove('bg-gray-900');			
+			profile.classList.add('bg-white');
+			
+		  }
+		});
+		
+    </script>
+	
+</body>
+
+</html>

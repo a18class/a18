@@ -524,58 +524,59 @@
       
       <script>
           // lấy thẻ input
-    var input = document.getElementById("myInput");
+    var input = document.getElementById("myInput")
     // định nghĩa hàm xử lý myFunction
     function myFunction() {
         var filter, ul, li, a, i,div,h2,p;
         // lấy giá trị người dùng nhập
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        a = ul.getElementsByTagName("a");
-        div = ul.getElementsByTagName("div")
+        filter = input.value.toUpperCase()
+        ul = document.getElementById("myUL")
+        a = ul.getElementsByTagName("a")
         // Nếu filter không có giá trị thị ẩn phần kết quả
         if (!filter) {
           for (i = 0; i < a.length; i++) {
+              div = a[i].parentElement.closest('div'); 
               // lấy thẻ h2 trong các thẻ a
-              h2 = a[i].getElementsByTagName("h2")[0];
-              p = a[i].getElementsByTagName("h2")[0];
+              h2 = a[i].getElementsByTagName("h2")[0]
+              p = a[i].getElementsByTagName("h2")[0]
               // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
               if ((h2.innerHTML.toUpperCase().indexOf(filter)) || (p.innerHTML.toUpperCase().indexOf(filter)) > -1) {
                 //nếu có hiển thị phàn tử ul và các thẻ a đó
-                  ul.style.display = "block";
-                  a[i].style.display = "";
+                  ul.style.display = "block"
+                  div.style.display = ""
               }
           }
         }else{
           // lặp qua tất cả các thẻ a chứa kết quả
           for (i = 0; i < a.length; i++) {
+              div = a[i].parentElement.closest('div'); 
               // lấy thẻ h2 trong các thẻ a
-              h2 = a[i].getElementsByTagName("h2")[0];
+              h2 = a[i].getElementsByTagName("h2")[0]
               // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
               if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
                 //nếu có hiển thị phàn tử ul và các thẻ a đó
-                  ul.style.display = "block";
-                  a[i].style.display = "";
-              } else {
+                  ul.style.display = "block"
+                  div.style.display = ""
+              } else { 
                 // nếu không ẩn các thẻ a
-                  a[i].style.display = "none";
+                  div.style.display = "none"
               }
           }
         }
     }
     //gán sự kiện cho thẻ input
-    input.addEventListener("keyup", myFunction);
+    input.addEventListener("keyup", myFunction)
 
 
         /*Toggle dropdown list*/
         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
-        var navMenuDiv = document.getElementById("nav-content");
-        var navMenu = document.getElementById("nav-toggle");
+        var navMenuDiv = document.getElementById("nav-content")
+        var navMenu = document.getElementById("nav-toggle")
 
-        document.onclick = check;
+        document.onclick = check
         function check(e) {
-          var target = (e && e.target) || (event && event.srcElement);
+          var target = (e && e.target) || (event && event.srcElement)
 
           //Nav Menu
           if (!checkParent(target, navMenuDiv)) {
@@ -583,24 +584,24 @@
             if (checkParent(target, navMenu)) {
               // click on the link
               if (navMenuDiv.classList.contains("hidden")) {
-                navMenuDiv.classList.remove("hidden");
+                navMenuDiv.classList.remove("hidden")
               } else {
-                navMenuDiv.classList.add("hidden");
+                navMenuDiv.classList.add("hidden")
               }
             } else {
               // click both outside link and outside menu, hide menu
-              navMenuDiv.classList.add("hidden");
+              navMenuDiv.classList.add("hidden")
             }
           }
         }
         function checkParent(t, elm) {
           while (t.parentNode) {
             if (t == elm) {
-              return true;
+              return true
             }
-            t = t.parentNode;
+            t = t.parentNode
           }
-          return false;
+          return false  
         }
 
       </script>

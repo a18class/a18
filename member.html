@@ -104,7 +104,7 @@
 
     <div class="flex justify-center pt-24 backgroundsame overflow-hidden w-full">
       <div class="item min-w-screen overflow-hidden h-auto ">
-        <a class="flex items-center justify-center items-center my-4 text-black font-bold text-center text-lg font-mono">Chức năng search và các thẻ chưa có ảnh tạm thời chưa hoạt động</a>
+        <a class="flex items-center justify-center items-center my-4 text-black font-bold text-center text-lg font-mono">Chức năng search đã hoạt động nhưng các thẻ chưa có ảnh tạm thời không có thông tin hoặc chưa hoàn thành</a>
         <!--Search-->
           <div class="container flex items-center justify-center text-white min-w-screen overflow-hidden">
               <div class="relative">
@@ -538,9 +538,8 @@
               div = a[i].parentElement.closest('div'); 
               // lấy thẻ h2 trong các thẻ a
               h2 = a[i].getElementsByTagName("h2")[0]
-              p = a[i].getElementsByTagName("h2")[0]
               // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
-              if ((h2.innerHTML.toUpperCase().indexOf(filter)) || (p.innerHTML.toUpperCase().indexOf(filter)) > -1) {
+              if ((h2.innerHTML.toUpperCase().indexOf(filter))> -1) {
                 //nếu có hiển thị phàn tử ul và các thẻ a đó
                   ul.style.display = "block"
                   div.style.display = ""
@@ -552,8 +551,9 @@
               div = a[i].parentElement.closest('div'); 
               // lấy thẻ h2 trong các thẻ a
               h2 = a[i].getElementsByTagName("h2")[0]
+              p = a[i].getElementsByTagName("p")[0]
               // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
-              if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              if (h2.innerHTML.toUpperCase().indexOf(filter) > -1 || p.innerHTML.toUpperCase().indexOf(filter) > -1 ) {
                 //nếu có hiển thị phàn tử ul và các thẻ a đó
                   ul.style.display = "block"
                   div.style.display = ""

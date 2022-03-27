@@ -114,7 +114,6 @@
                   <input type="text" id="myInput" class="h-14 max-w-24 pl-10 bg-gray-700 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" placeholder="Search name...">
               </div>
           </div>
-          <a class="flex items-center justify-center my-4 text-black font-bold text-center text-4xl font-mono">Giáo viên</a>
       </div>
       
     
@@ -122,6 +121,7 @@
 
     <!-- Card -->
     <div class="container mx-auto backgroundsame min-h-screen overflow-hidden max-w-full" id="myUL">
+      <div class="flex items-center justify-center my-4 text-black font-bold text-center text-4xl font-mono">Giáo viên</div>
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap -mx-4">
 
@@ -527,18 +527,29 @@
     var input = document.getElementById("myInput");
     // định nghĩa hàm xử lý myFunction
     function myFunction() {
-        var filter, ul, li, a, i,div,h2;
+        var filter, ul, li, a, i,div,h2,p;
         // lấy giá trị người dùng nhập
         filter = input.value.toUpperCase();
         ul = document.getElementById("myUL");
         a = ul.getElementsByTagName("a");
+        div = ul.getElementsByTagName("div")
         // Nếu filter không có giá trị thị ẩn phần kết quả
         if (!filter) {
-          ul.style.display = "none";
+          for (i = 0; i < a.length; i++) {
+              // lấy thẻ h2 trong các thẻ a
+              h2 = a[i].getElementsByTagName("h2")[0];
+              p = a[i].getElementsByTagName("h2")[0];
+              // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
+              if ((h2.innerHTML.toUpperCase().indexOf(filter)) || (p.innerHTML.toUpperCase().indexOf(filter)) > -1) {
+                //nếu có hiển thị phàn tử ul và các thẻ a đó
+                  ul.style.display = "block";
+                  a[i].style.display = "";
+              }
+          }
         }else{
           // lặp qua tất cả các thẻ a chứa kết quả
           for (i = 0; i < a.length; i++) {
-              // lấy thẻ h1 trong các thẻ a
+              // lấy thẻ h2 trong các thẻ a
               h2 = a[i].getElementsByTagName("h2")[0];
               // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
               if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -546,7 +557,7 @@
                   ul.style.display = "block";
                   a[i].style.display = "";
               } else {
-                // nếu không ẩn các thẻ li
+                // nếu không ẩn các thẻ a
                   a[i].style.display = "none";
               }
           }
@@ -554,6 +565,8 @@
     }
     //gán sự kiện cho thẻ input
     input.addEventListener("keyup", myFunction);
+
+
         /*Toggle dropdown list*/
         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 

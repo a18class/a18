@@ -736,7 +736,7 @@
             <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
               <a href="./Profilehocsinh/HoangKy/" class="c-card block bg-gray-300 shadow-md transform transition duration-500 hover:scale-110 hover:shadow-xl rounded-3xl overflow-hidden">
               <div class="relative pb-48 overflow-hidden">
-                <img class="absolute inset-0 h-full w-full object-cover" src="./Images/No Picture.jpg" alt="Hoàng Kỳ">
+                <img class="absolute inset-0 h-full w-full object-cover" src="./Prof alt="Hoàng Kỳ">
               </div>
               <div class="p-4">
                 <h2 class="mt-2 mb-2 font-bold text-xl text-black text-center">Hoàng Kỳ</h2>
@@ -786,7 +786,8 @@
           <h3 class="my-4 text-3xl mx-auto leading-tight">
             Thành viên của lớp
           </h3>
-          
+          <div class="text-3xl text-black font-bold">Thời gian dự kiến tới cuộc thi THPT Quốc Gia cũng là thời gian chúng ta sẽ rời xa nhau: <div id="countdowntime"></div></div>
+           
         </section>
         <footer class="bg-white">
           <div class="container mx-auto px-8">
@@ -919,5 +920,36 @@
         }
 
       </script>
+                <!-- Countdown time -->
+                <script>
+                  // Set the date we're counting down to
+                  var countDownDate = new Date("July 7, 2023 0:00:00").getTime();
+                  
+                  // Update the count down every 1 second
+                  var x = setInterval(function() {
+                  
+                    // Get today's date and time
+                    var now = new Date().getTime();
+                      
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+                      
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                      
+                    // Output the result in an element with id="demo"
+                    document.getElementById("countdowntime").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                      
+                    // If the count down is over, write some text 
+                    if (distance < 0) {
+                      clearInterval(x);
+                      document.getElementById("countdowntime").innerHTML = "EXPIRED";
+                    }
+                  }, 1000);
+                  </script>
   </body>
 </html>

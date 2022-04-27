@@ -73,15 +73,6 @@
     <div class="container mx-auto flex flex-col md:flex-row my-12 md:my-36">
   <div class="flex flex-col w-full lg:w-2/5 p-8">
     <p class="text-3xl md:text-5xl text-yellow-500 my-4 leading-relaxed md:leading-snug ">Contact with us</p>
-    
-    <p class="font-sans text-sm md:text-lg my-2 md:my:4">
-      <i class="fas fa-user inline-block fill-current mr-2 fa-lg"></i> Đoàn Nguyễn Quang Minh ( Thông tin )</p>
-      
-    <p class="font-sans text-sm md:text-lg my-2 md:my-4">
-      <i class="fas fa-envelope inline-block fill-current mr-2 fa-lg"></i> a18classroom@gmail.com</p>
-
-    <p class="font-sans text-sm md:text-lg my-2 md:my-4">
-      <i class="fas fa-phone-alt inline-block fill-current mr-2 fa-lg"></i> Sẽ có trong tương lai</p> <br> <br>
 
     <p class="font-sans text-sm md:text-lg my-2 md:my:4">
       <i class="fas fa-user inline-block fill-current mr-2 fa-lg"></i> Nguyễn Thị Hương Giêng (Ảnh + Thông tin)</p>
@@ -146,6 +137,8 @@
       <h3 class="my-4 text-3xl mx-auto leading-tight">
         Vui lòng liên hệ với chúng tôi nếu có thông tin sai hoặc có góp ý để website thêm phát triển
       </h3>
+      <div class="text-3xl text-black font-bold">Thời gian dự kiến tới cuộc thi THPT Quốc Gia cũng là thời gian chúng ta sẽ rời xa nhau: <div id="countdowntime"></div></div>
+
       
     </section>
     <!--Footer-->
@@ -234,5 +227,36 @@
         return false;
       }
     </script>
+              <!-- Countdown time -->
+              <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("July 7, 2023 0:00:00").getTime();
+                
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+                
+                  // Get today's date and time
+                  var now = new Date().getTime();
+                    
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+                    
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                  // Output the result in an element with id="demo"
+                  document.getElementById("countdowntime").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+                    
+                  // If the count down is over, write some text 
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdowntime").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+                </script>
   </body>
 </html>

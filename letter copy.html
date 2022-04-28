@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      A18 Class
+    </title>
+    <meta name="description" content="A18 Class" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="./Images/main/logov1.png">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <style>
+      .gradient {
+        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+      }
+      .backgroundsame {
+        background-color: #f8fafc;
+      }
+    .carousel-open:checked+.carousel-item {
+      position: static;
+      opacity: 100;
+    }
+
+    .carousel-item {
+      -webkit-transition: opacity 0.6s ease-out;
+      transition: opacity 0.6s ease-out;
+    }
+
+    #carousel-1:checked~.control-1,
+    #carousel-2:checked~.control-2,
+    #carousel-3:checked~.control-3 {
+      display: block;
+    }
+
+    .carousel-indicators {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+    }
+
+    #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+    #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+    #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+      color: #2b6cb0;
+      /*Set to match the Tailwind colour you want the active one to be */
+    }
+    </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          scale: {
+            '117': '1.17',
+          }
+        }
+      }
+    }
+  </script>
+  
+  </head>
+  <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!--Nav-->
+    <nav id="header" class="fixed w-full z-30 top-0 text-white gradient">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="https://a18class.github.io/a18">
+            <!--Icon from: http://www.potlabicons.com/ -->
+            <img class="ml-12 w-32" src="./Images/main/a18-cool-removebg.png" />
+          </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="w-full mr-5 flex-grow mx-auto lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+            <li class="mr-3">
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline hover:text-gray-800 hover:text-underline text-lg" href="./member.html">Member</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4 text-lg" href="./gallery.html">Gallery</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4 text-lg" href="./letter.html">Letter</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4 text-lg" href="./achivement.html">Achivements</a>
+            </li>
+          </ul>
+          <button
+            onclick="location.href='./contact.html' "
+            id="navAction"
+            class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-lg"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
+<!-- END NAV -->
+ <!-- Required font awesome -->
+
+ <!-- FLEX BOX IMAGE -->
+ <!-- Word Tags -->
+    <div class="container mx-auto px-4 backgroundsame min-h-full min-w-full pb-12">
+        <div class="container pt-24 mx-auto">
+        <div class="text-center text-3xl text-black font-bold my-3"><i class="fas fa-envelope text-yellow-400"></i> Những lá thư còn lưu lại <i class="fas fa-envelope text-yellow-400"></i></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Cấp 3 là nơi mà mọi ý tưởng nảy sinh thể hiện sự ngây thơ, xông xáo của tuổi trẻ và là chất xúc tác khiến tình cảm đơm hoa và cả những rạn nứt tuổi mới lớn xảy ra. Hãy đi con đường của bạn! Đó là ý tưởng tốt hơn bao giờ hết...</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Cấp 3 có thể là một trong những khoảng thời gian hạnh phúc nhất, buồn nhất, cảm xúc nhất, mệt mỏi và vui vẻ nhất trong cuộc đời mỗi người chúng ta.</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Có khoảng một triệu các quy luật để trở thành một cô gái đúng nghĩa. Có khoảng một triệu thứ mà bạn phải làm hàng ngày. Cấp 3 cũng có vô số thứ giúp bạn có thể trải nghiệm, khám phá, nơi đó mọi người nói về một điều nhưng lại bao hàm nhiều ý nghĩa khác nhau, và bạn phải học cách để nắm rõ tất cả các quy luật, bạn phải biết cái nào mà mình có thể và không thể làm.</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Có một thế giới rộng lớn ở ngoài kia. Lớn hơn những bữa tiệc chia tay, hơn cả ngôi trường cấp 3 và sẽ không có chuyện gì xảy ra nếu bạn có là nữ hoàng của buổi tiệc hay đội trưởng của đội bóng. Hãy ra ngoài và khám phá thế giới để hiểu bạn là ai và cố gắng để không hoảng sợ trước mọi chuyện.</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Tôi đã đối xử tốt với các chàng trai hơn các cô gái. Chỉ có duy nhất hai bạn nữ nói chuyện với tôi. Và sau đó tôi nhận ra họ chỉ kể về bạn trai của họ. “Nếu bạn nói cho cô ấy, tôi sẽ giết bạn”, đó là điều mà tôi thường xuyên phải nghe khi học cấp 3.</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Thật là khó để thuyết phục một học sinh cấp 3 rằng anh ấy sẽ gặp nhiều rắc rối hơn trong tương lai hơn là việc học đại số và hình học ở hiện tại.</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+                <div class="m-3">
+                <h2 class="text-lg text-black mb-2">Title
+                <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+                <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Tiến lên là việc đơn giản. Nhưng những gì chúng ta để lại đằng sau luôn là khó khăn.</p>
+                </div>
+            </div>
+
+            <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+              <div class="m-3">
+              <h2 class="text-lg text-black mb-2">Title
+              <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+              <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Niềm vui lớn nhất của cuộc đời là làm những điều mà người khác cho rằng mình không có khả năng để thực hiện.</p>
+              </div>
+          </div>
+
+          <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+            <div class="m-3">
+            <h2 class="text-lg text-black mb-2">Title
+            <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+            <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Cấp 3 là khoảng thời gian để bạn cảm nhận những nụ cười khúc khích, cảm xúc khác lạ và đặc biệt.</p>
+            </div>
+        </div>
+
+        <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+          <div class="m-3">
+          <h2 class="text-lg text-black mb-2">Title
+          <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+          <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Thật là khó để tìm những người bạn tốt, càng khó hơn khi phải chia tay họ và đó là những người mà ta không bao giờ có thể quên.</p>
+          </div>
+      </div>
+
+      <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+        <div class="m-3">
+        <h2 class="text-lg text-black mb-2">Title
+        <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+        <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Trong suốt một đời người, thông thường bạn gặp rất nhiều người. Một vài trong số đó có thể gắn bó với bạn lâu dài, một số khác chỉ thoảng qua và biến mất mãi mãi. Nhưng qua một thời gian tất cả mọi người sẽ có chỗ đứng nhất định trong trái tim bạn.</p>
+        </div>
+    </div>
+
+      <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+        <div class="m-3">
+        <h2 class="text-lg text-black mb-2">Title
+        <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+        <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Thời gian vui vẻ sẽ đến và đi, nhưng kỷ niệm thì luôn còn mãi.</p>
+        </div>
+    </div>
+
+      <div class="card m-2 cursor-pointer border bg-green-200 border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+        <div class="m-3">
+        <h2 class="text-lg text-black mb-2">Title
+        <span class="text-sm text-teal-800 font-mono bg-teal-400 inline rounded-full px-2 align-top float-right animate-pulse">Admin</span></h2>
+        <p class="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">Nắng tháng năm. Nắng mùa thi. Nắng chói chang, gay gắt, ra dáng một mùa hè nóng bức thực thụ. Ở khoảng không gian nào đó đã xuất hiện sắc đỏ của những bông hoa phượng đầu tiên, rực rỡ và kiêu hãnh dưới ánh nắng vàng mật. Mấy ngày trước, phượng đã ấp úng hé nở ngỡ ngàng trong mắt ai, nhưng sự vội vàng và bận bịu cuốn phăng đi những cảm xúc cũng vội vã chẳng kém. Phượng ơi… nở làm chi…!? Trời xanh, xanh lắm nhưng lòng ai thì đang gợn mây mù… Đi giữa sân trường, đưa tay xoa nhẹ lên mặt cho đỡ rát nắng, nheo mắt chóng lại sức chói chang của ánh nắng nổ lửa, tự nhiên thấy mắt mình cay quá! Cay vì nắng ư - hay bởi vì lòng ai cay rát quá? Bất giác giật mình, thổn thức: Mùa phượng cuối rồi sao…?
+
+Bao nhiêu năm rồi có bao giờ tôi không mong được thấy phượng nở đâu, nhưng năm nay phượng nở sao sớm quá? Vậy là đã tròn 12 mùa phượng rực hồng, tròn 3 chặng đường học tập. Nhớ da diết làm sao buổi học đầu tiên với bao bỡ ngỡ, lạ lùng: trường mới, thầy cô mới, bạn bè mới… Thế mà giờ đây sao tất cả lại trở nên thân quen quá! Ba năm thời trung học phổ thông đã sắp hết rồi. Ba năm – một khoảng thời gian học tập, rèn luyện dưới mái trường này – không hẳn là dài nhưng cũng đủ để biến nơi đây thành kỉ niệm yêu thương… yêu thương đến nỗi, giờ phút này đây, dù có nhắm mắt lại, chúng tôi cũng vẫn có thể hình dung được toàn cảnh ngôi trường này, với thầy cô, bạn bè, hàng cây, ghế đá,… với biết bao vui buồn, nụ cười và nước mắt của tuổi học trò. Nhưng… tất cả sắp phải xa rồi… !
+
+Như quy luật xuân đi rồi hạ đến
+
+Lớp một xong sẽ có lúc mười hai
+
+Cánh phượng nào xoay bay vào nỗi nhớ
+
+Hạ vô tình đem hai chữ “chia tay”.
+
+Các bạn có nhớ không, mới hôm nào đại gia đình P14 chúng ta còn náo nức rộn rịp chuẩn bị hội trại, dù là vừa thi xong mệt lắm, nhưng ai nấy đều hăng hái bắt tay vào việc, tranh thủ suốt đêm chỉ mong sao năm cuối cùng mà vẫn được hưởng trọn vẹn cảm giác ấm cúng khi cùng nhau quây quần trong khu trại đẹp đẽ của lớp mình. Và hơn nữa là… biết bao giờ chúng ta lại có thể cùng nhau làm trại như thế này nữa, mà dường như điều đó là không thể nữa rồi…
+
+Cô ơi, tụi con lại nhớ tới cô! Đêm trại năm nay cô không có mặt ở trại của gia đình mình thường xuyên như hai năm trước vì bận việc của trường, cô không còn cùng tụi con cầm dùi và chiếc trống con đi giao lưu khắp các lớp, làm náo động bất cứ nơi nào gia đình mình đến, làm tỉnh lại không khí mệt mỏi khắp sân trường lúc gần hai giờ sáng… Nhưng cô ơi điều mà tụi con hạnh phúc nhất là dù làm gì tụi con cũng luôn có cô bên cạnh động viên tinh thần, dù là không phải lúc nào cô cũng ở bên tụi con, chăm sóc từng li từng tí, nhưng trong sự nổ lực của tụi con luôn có cô. Cách cô truyền lửa nhiệt huyết cho tụi con không giống ai cả cô ơi: cô ít khi cho tụi con biết cô muốn ở tụi con điều gì qua lời cô khuyên dạy mà là qua những câu chuyện cô kể tụi con nghe, những trường hợp cô đã trải qua, có khi nhắc lại cùng tụi con mà mắt cô cứ hoe hoe đỏ. Mỗi lần tụi con vấp ngã hay mắc khuyết điểm cô lại nhắc tụi con nhớ câu chuyện chiếc bình nứt, dù bình không giữ được nước nhưng trên đường vận chuyển chiếc bình đó đã có thể làm tươi tốt cho biết bao cây hoa…Chỉ vậy thôi nhưng thấm thía lắm cô ạ…
+
+Tất cả như chỉ mới hôm qua thôi vậy mà nhìn về thực tại thì đã đến lúc sắp phải chia tay rồi…
+
+Thời gian bây giờ chỉ còn được đếm ngược và tính bằng từng ngày, từng giây, từng phút, không phải bằng sự náo nức chờ hè như năm nào nữa mà lại như có gì ngậm ngùi, tiếc nuối quá! Ngồi lại gần nhau, tựa vai nhau những giờ rảnh rỗi, hát nhau nghe, tự dưng có những lúc nước mắt sao cứ vội rơi không cầm lại được. Những trái tim đồng điệu đã tự hiểu nhịp đập của nhau, hiểu rằng mỗi chúng ta đang nghĩ gì nên cũng chẳng thể thốt lên lời nào cả. Ánh nhìn kia là những nỗi niềm vương vấn, nụ cười gượng trên môi giữa lúc ánh mắt còn nhoè nhòe uơn ướt là để giấu đi những cảm xúc chưa từng có và cũng không ai muốn có, là để an ủi nhau rằng “còn ngồi đó chứ có chia tay đâu”!
+
+Có thể trên đường đời mỗi người sẽ trải qua nhiều lớp học nữa nhưng để một lần ngồi lại cùng nhau trong cùng một lớp với những gương mặt này, cùng nhau ngồi lặng im, cùng nhau hát, cùng nhau đùa nghịch, có lúc dỗi hờn, ganh ghét,… điều ấy gần như là không thể…Nghĩ đến điều này, tôi biết chứ, các bạn của tôi, ai ai cũng cố nở nụ cười trên môi nhưng nước mắt thì lại đang chảy trong lòng mỗi người, tim ai cũng thắt lại khi nghĩ đến hai chữ “chia tay”. Dẫu biết rằng buổi tiệc nào rồi cũng phải tàn, buổi họp nào rồi cũng phải tan và… lần gặp gỡ nào rồi chẳng phải chia tay…Nhưng, đừng buồn nhé bạn ơi nếu một ngày nào đó, quay trở về lớp học ngày xưa bỗng cảm thấy thiếu vắng những tiếng cười vui, những gương mặt thuở nào, đứng trước cửa lớp chờ hoài mà chẳng thấy bạn bè cùng vào học… Đừng khóc nhé bạn ơi nếu một ngày nào đó tôi và bạn chia xa, xa cả cái tuổi học trò thơ dại, muốn gặp lại nhau cũng chẳng biết phải đợi đến khi nào…
+
+Tôi đứng lặng im giữa dòng đời buồn tẻ
+
+Bạn tôi cười ngạo nghễ lệ tuôn rơi
+
+Hai mảnh đời như hai dòng thước kẻ
+
+Sao xót xa không nói được thành lời
+
+Giữa nhịp sống hối hả, năng động, có lúc ta quên đi ý nghĩa của những giá trị giản đơn, thường nhật, cho đến khi sắp mất đi rồi, bất giác ta với tay níu giữ mà tưởng chừng như không còn kịp nữa… Giây phút này đây, tôi chợt nhận ra tình bạn đáng quý biết dường nào. Phải, nếu như không có các bạn có lẽ đã khác đi nhiều rồi: ai sẽ cùng tôi trải qua những khó khăn trong học tập, ai vịn nhẹ vai tôi bảo “cố gắng lên”, ai ngồi kể tôi nghe những câu chuyện cười đôi lúc chẳng mấy duyên rồi cùng tôi cười như nắc nẻ, ai bật khóc cùng tôi khi nhắc đến một ngày nào đó “sáng đi học tao với mày không gặp nhau”..? Những giây phút bên các bạn thật bình yên! Nhưng… thời gian thì không bao giờ ngừng lại…Thế nên hãy trân trọng từng giây phút bên nhau bởi lẽ không ai có thể lấy lại thời gian đã mất dù chỉ một giây. Dẫu có nuối tiếc nhưng hãy luôn quý trọng và thầm cảm ơn rằng trong những ngày tháng qua, sáng thức giấc, ta được đến lớp, đuợc học tập, được vui đùa bên các bạn, được gắn bó, yêu thương để thấy ấm áp dâng tràn; hãy trân trọng từng nụ cười, từng giọt nước mắt, cả những giận hờn, trách móc, đua ganh… Dù những gì hôm qua đã trở thành quá khứ, xin hãy lưu giữ lại những khoảnh khắc đáng yêu nhất, hồn nhiên nhất của tuổi học trò, làm hành trang vững tâm bước tiếp vào tương lai…
+
+Ngày chia tay chắc sẽ thật buồn nhưng tôi không muốn ngày ấy đong dầy nước mắt. Sao không cười lên với niềm hạnh phúc vì những ngày tháng qua chúng ta đã được bên nhau và hãy tin tưởng rằng lũ chúng ta sẽ mãi có nhau trong cuộc đời này…?
+
+Lời cuối cùng tôi muốn nói với tất cả các bạn rằng “Tôi ước gì còn được ở bên các bạn – bên P14 lâu hơn…mãi nhớ các bạn!” Thương chúc đại gia đình chúng ta thành công rực rỡ trong kì thi tốt nghiệp và Đại học – Cao đẳng sắp tới. Chúc các bạn luôn hạnh phúc, vui vẻ, tự tin, thành công trong cuộc sống…</p>
+        </div>
+    </div>
+
+
+    
+            </div>
+            <div class="text-black text-2xl text-center my-5 font-bold">
+              Ai có tâm tư gì cần gửi thì đừng ngại hãy inbox với Facebook <a class="link text-2xl text-black font-bold cursor-pointer hover:text-red-500 inline" href="https://www.facebook.com/ngtgieng" data-tippy-content="Hương Giang">Hương Giang</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- FOOTER -->
+    <!-- Change the colour #f8fafc to match the previous section colour -->
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+          <g class="wave" fill="#f8fafc">
+            <path
+              d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"
+            ></path>
+          </g>
+          <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+            <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+              <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+              <path
+                d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                opacity="0.100000001"
+              ></path>
+              <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <section class="container mx-auto text-center py-6 mb-12">
+      <h1 class="w-full my-2 mx-auto text-5xl font-bold leading-tight text-center text-white">
+        Notification
+      </h1>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <h3 class="my-4 text-3xl mx-auto leading-tight">
+        Thư viện ảnh của lớp
+      </h3>
+      <div class="text-2xl text-black font-bold">Thời gian dự kiến tới cuộc thi THPT Quốc Gia cũng là thời gian chúng ta sẽ rời xa nhau và xa mái trường FPT đã gắn bó trong 3 năm: <div id="countdowntime"></div></div>
+
+      
+    </section>
+    <footer class="bg-white">
+      <div class="container mx-auto px-8">
+        <div class="w-full flex flex-col md:flex-row py-6">
+          <div class="flex-1 mb-6 text-black">
+            <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="https://a18class.github.io/a18">
+              <!--Icon from: http://www.potlabicons.com/ -->
+              <img class="mx-auto w-40" src="./Images/main/a18-cool-removebg.png" />
+            </a>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 font-bold md:mb-6">Links</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="./member.html" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Member</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="./gallery.html" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Gallery</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="./letter.html" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Letter</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="./achivement.html" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Achivements</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 font-bold md:mb-6">Social</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="https://www.facebook.com/Tr%E1%BA%A1i-giam-s%E1%BB%91-18-100286012425236/" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Trại giam số 18</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 font-bold md:mb-6">Support</p>
+            <ul class="list-reset mb-6">
+              
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="./contact.html" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+              </li>
+            </ul>
+            </div>
+        </div>
+        <div
+              class="text-center text-black text-sm font-mono">Made by Huy with ❤️</div>
+      </div>
+      
+    </footer>
+    
+    <script>
+      /*Toggle dropdown list*/
+      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      document.onclick = check;
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv.classList.remove("hidden");
+            } else {
+              navMenuDiv.classList.add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv.classList.add("hidden");
+          }
+        }
+      }
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+    </script>
+              <!-- Countdown time -->
+              <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("July 7, 2023 0:00:00").getTime();
+                
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+                
+                  // Get today's date and time
+                  var now = new Date().getTime();
+                    
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+                    
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                  // Output the result in an element with id="demo"
+                  document.getElementById("countdowntime").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+                    
+                  // If the count down is over, write some text 
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdowntime").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+                </script>
+  </body>
+</html>
